@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int rowSize1, colSize1, rowSize2, colSize2, i, j;
+    int mat1[10][10], mat2[10][10], matSub[10][10];
+    printf("Enter Row and Column Size of First Matrix: ");
+    scanf("%d%d", &rowSize1, &colSize1);
+    printf("Enter Row and Column Size of Second Matrix: ");
+    scanf("%d%d", &rowSize2, &colSize2);
+    if(rowSize1==rowSize2 && colSize1==colSize2)
+    {
+        printf("\nEnter First %d*%d Matrix Elements: ", rowSize1, colSize1);
+        for(i=0; i<rowSize1; i++)
+        {
+            for(j=0; j<colSize1; j++)
+                scanf("%d", &mat1[i][j]);
+        }
+        printf("Enter Second %d*%d Matrix Elements: ", rowSize2, colSize2);
+        for(i=0; i<rowSize2; i++)
+        {
+            for(j=0; j<colSize2; j++)
+                scanf("%d", &mat2[i][j]);
+        }
+        printf("\nThe Subtraction Result is:\n");
+        for(i=0; i<rowSize1; i++)
+        {
+            for(j=0; j<colSize1; j++)
+            {
+                matSub[i][j] = mat1[i][j] - mat2[i][j];
+                printf("%d  ", matSub[i][j]);
+            }
+            printf("\n");
+        }
+    }
+    else
+        printf("\nSubtraction can't be Performed!");
+    getch();
+    return 0;
+}
